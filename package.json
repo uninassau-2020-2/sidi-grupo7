@@ -1,0 +1,16 @@
+{
+  "name": "viacep-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luan Portela",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
