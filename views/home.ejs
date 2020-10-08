@@ -1,0 +1,43 @@
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Consulta de Cep</title>
+    <style>
+        #map {
+          height: 100%;
+        }
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+      
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <section>
+        <div>
+            
+            <%- include('partials/cepForm', {cep}) %>
+        </div>
+        <div>
+            
+            <% if (cep !== '') { %>
+                <%- include('partials/cepDisplay', { cep, logradouro, complemento, bairro, localidade, uf, ibge, gia, ddd, siafi } )%>
+            <% } %>
+        </div>
+    </section>
+
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG4ffAMTOgw2jaz5DXUP9iBV-cppkoMqQ&callback=initMap">
+    </script>
+
+</body>
+
+</html>
