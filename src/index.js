@@ -1,9 +1,8 @@
-const port  = 8081
+const { port } = require('../config/configs')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const { makeConsultViaCep, renderHome } = require('./routes')
-
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
