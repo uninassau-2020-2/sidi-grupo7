@@ -13,7 +13,7 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     """
     """
-    DEBUG = False
+    DEBUG = True
 
 
 app_config = {
