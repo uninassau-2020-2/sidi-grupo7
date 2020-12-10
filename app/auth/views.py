@@ -56,7 +56,9 @@ def login():
                 form.password.data):
             # log user in
             login_user(user)
-
+            
+            if(user.is_admin):
+                return redirect(url_for('admin.home'))
             # redirect to the dashboard page after login
             return redirect(url_for('home.dashboard'))
 

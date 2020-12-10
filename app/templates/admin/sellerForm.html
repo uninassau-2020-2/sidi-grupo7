@@ -1,10 +1,14 @@
+{% import "bootstrap/utils.html" as utils %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% extends "base.html" %}
-{% block title %}Register{% endblock %}
+{% block title %}SellerForm{% endblock %}
 {% block body %}
 <div class="content-section">
+  <br/>
+  {{ utils.flashed_messages() }}
+  <br/>
   <div class="center">
-    <h1>Registre sua conta</h1>
+    <h1>Pesquisar Vendedor</h1>
     <br/>
     {{ wtf.quick_form(form) }}
   </div>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Rei do Cagaço</title>
+    <title>Rei do Cangaço</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/cacto.jpeg') }}">
@@ -24,9 +24,16 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
-                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
-                <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
+                    {% if current_user.is_admin %}
+                    <li><a href="{{ url_for('admin.home') }}">Home</a></li>
+                    <li><a href="{{ url_for('admin.list_sellers') }}">Vendedores</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
+                    {% endif %}
                 {% else %}
                 <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
                 <li><a href="{{ url_for('auth.register') }}">Cadastro</a></li>
@@ -51,7 +58,7 @@
                         {% if current_user.is_authenticated %}
                         <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                         {% else %}
-                        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                        <li><a href="{{ url_for('auth.register') }}">Cadastro</a></li>
                         <li class="footer-menu-divider">⋅</li>
                         <li><a href="{{ url_for('auth.login') }}">Login</a></li>
                         {% endif %}

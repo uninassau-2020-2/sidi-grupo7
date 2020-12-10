@@ -1,3 +1,4 @@
+from enum import unique
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -36,7 +37,7 @@ class Seller(UserMixin, db.Model):
         Set password to a hashed password
         """
         self.password_hash = generate_password_hash(password)
-
+    
     def verify_password(self, password):
         """
         Check if hashed password matches actual password

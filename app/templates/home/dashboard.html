@@ -2,18 +2,14 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block body %}
-<div class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="intro-message">
-                    <h1>The Dashboard</h1>
-                    <h3>We made it here!</h3>
-                    <hr class="intro-divider">
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div id="cadastro">
+    <form method="post" action=""> 
+      <h1>Cadastro</h1> 
+       
+      <p> 
+        <label for="nome_cad">Cadastrar Vendendor:</label>
+        <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
+        <a href=""><button>Pesquisar</button></a> 
+
+      </p>
 {% endblock %}

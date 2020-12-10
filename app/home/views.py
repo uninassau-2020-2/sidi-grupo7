@@ -1,7 +1,8 @@
 # app/home/views.py
 
-from flask import render_template
-from flask_login import login_required
+from flask import render_template, flash
+from flask_login import login_required, current_user
+from flask_migrate import current
 
 from . import home
 
@@ -21,3 +22,4 @@ def dashboard():
     Render the dashboard template on the /dashboard route
     """
     return render_template('home/dashboard.html', title="Dashboard")
+
